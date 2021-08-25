@@ -68,6 +68,16 @@ export class AuthService {
 
   }
 
+  logout() {
+    this.user.next(null);
+    this.router.navigate(['/auth']);
+    localStorage.removeItem('userData');
+    // if (this.tokenExpirationTimer) {
+    //   clearTimeout(this.tokenExpirationTimer);
+    // }
+    // this.tokenExpirationTimer = null;
+  }
+
   private handleAuthentication(
     email: string,
     userId: string,
