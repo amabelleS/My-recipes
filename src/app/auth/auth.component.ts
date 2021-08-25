@@ -32,7 +32,7 @@ export class AuthComponent {
     this.isLoading = true;
 
     if (this.isLoginMode) {
-      // authObs = this.authService.login(email, password);
+      authObs = this.authService.login(email, password);
     } else {
       authObs = this.authService.signup(email, password);
     }

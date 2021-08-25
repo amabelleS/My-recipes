@@ -37,6 +37,19 @@ export class AuthService {
       );
   }
 
+  login(email: string, password: string) {
+    return this.http
+      .post<AuthResponseData>(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDk66125KCAszPwJeypOdHXnOOpGbwc6Iw',
+        {
+          email: email,
+          password: password,
+          returnSecureToken: true
+        }
+      )
+
+  }
+
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
     if (!errorRes.error || !errorRes.error.error) {
