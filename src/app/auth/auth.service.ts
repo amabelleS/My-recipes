@@ -46,7 +46,9 @@ export class AuthService {
           password: password,
           returnSecureToken: true
         }
-      )
+      ).pipe(
+        catchError(this.handleError)
+      );
 
   }
 
