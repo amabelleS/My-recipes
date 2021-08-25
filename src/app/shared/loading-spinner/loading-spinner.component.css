@@ -3,6 +3,7 @@
   position: relative;
   width: 80px;
   height: 80px;
+  top: 30vh;
   transform: rotate(45deg);
   transform-origin: 40px 40px;
 }
